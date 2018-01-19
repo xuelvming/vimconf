@@ -2,6 +2,12 @@
 " mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 " curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 " load the pathogen plugin automatically
+
+" how to add a plugin
+" git submodule add https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+" git submodule init or git submodule update
+
+
 execute pathogen#infect()
 
 
