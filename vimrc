@@ -72,5 +72,8 @@ autocmd VimEnter * wincmd p
 " Do not display some useless files in the tree:
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp','\.git']
 
+" quit the nerdtree if it's the last buffer
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " end the conf of nerdtree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
