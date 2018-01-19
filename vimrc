@@ -5,8 +5,6 @@
 execute pathogen#infect()
 
 
-filetype on
-syntax on
 " colorscheme Tomorrow-Night-Bright
 colorscheme Tomorrow-Night
 
@@ -28,6 +26,8 @@ set hidden
 set history=100
 
 filetype indent on
+filetype on
+syntax on
 set nowrap
 set tabstop=2
 set shiftwidth=2
