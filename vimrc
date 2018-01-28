@@ -66,8 +66,8 @@ let NERDTreeMapActivateNode='<right>'
 nmap <leader>j :NERDTreeFind<CR>
 
 " Always open the tree when booting Vim, but don’t focus it:
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
+" autocmd VimEnter * NERDTree
+" autocmd VimEnter * wincmd p
 
 " Do not display some useless files in the tree:
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp','\.git']
@@ -77,3 +77,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " end the conf of nerdtree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+" begin vim-jsx
+" By default, JSX syntax highlighting and indenting will be enabled 
+" only for files with the .jsx extension. 
+" If you would like JSX in .js files, add
+let g:jsx_ext_required = 0
+
+" end vim-jsx
