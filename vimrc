@@ -76,8 +76,15 @@ let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp','\.git']
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " end the conf of nerdtree
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" begin the tagbar
+nmap <F8> :TagbarToggle<CR>
+nmap <leader>t :TagbarToggle<CR>
+" Always open the tree when booting Vim, but don’t focus it:
+autocmd VimEnter * TagbarToggle 
+autocmd VimEnter * wincmd h
+" end the tagbar
 
 " begin vim-jsx
 " By default, JSX syntax highlighting and indenting will be enabled 
