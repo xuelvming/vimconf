@@ -93,3 +93,19 @@ autocmd VimEnter * wincmd h
 let g:jsx_ext_required = 0
 
 " end vim-jsx
+"
+"
+" begin vim-markdown
+
+"  Disable Folding
+let g:vim_markdown_folding_disabled = 1
+
+" Disable the default key bindings ,not used them very offen
+" prevent conficts
+" Disable Default Key Mappings
+let g:vim_markdown_no_default_key_mappings = 1
+
+" Enable TOC window auto-fit
+let g:vim_markdown_toc_autofit = 1
+
+" end vim-markdown
