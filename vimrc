@@ -77,3 +77,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " end the conf of nerdtree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+" shortcut for the tagbar
+nmap <F8> :TagbarToggle<CR>
