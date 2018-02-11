@@ -18,7 +18,7 @@ colorscheme Tomorrow-Night
 set colorcolumn=100
 
 " add line numbering
-set number
+set nonumber
 
 " Leader Key, default is backslash, set to space 
 let mapleader=" "
@@ -66,8 +66,8 @@ let NERDTreeMapActivateNode='<right>'
 nmap <leader>j :NERDTreeFind<CR>
 
 " Always open the tree when booting Vim, but don’t focus it:
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
+" autocmd VimEnter * NERDTree
+" autocmd VimEnter * wincmd p
 
 " Do not display some useless files in the tree:
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp','\.git']
@@ -76,8 +76,40 @@ let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp','\.git']
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " end the conf of nerdtree
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-" shortcut for the tagbar
+
+
+" begin the tagbar
 nmap <F8> :TagbarToggle<CR>
+nmap <leader>t :TagbarToggle<CR>
+" Always open the tree when booting Vim, but don’t focus it:
+" autocmd VimEnter * TagbarToggle 
+" autocmd VimEnter * wincmd h
+" end the tagbar
+
+" begin vim-jsx
+" By default, JSX syntax highlighting and indenting will be enabled 
+" only for files with the .jsx extension. 
+" If you would like JSX in .js files, add
+let g:jsx_ext_required = 0
+
+" end vim-jsx
+"
+"
+" begin vim-markdown
+
+"  Disable Folding
+let g:vim_markdown_folding_disabled = 1
+
+" Disable the default key bindings ,not used them very offen
+" prevent conficts
+" Disable Default Key Mappings
+let g:vim_markdown_no_default_key_mappings = 1
+
+" Enable TOC window auto-fit
+let g:vim_markdown_toc_autofit = 1
+
+" end vim-markdown
