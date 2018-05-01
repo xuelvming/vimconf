@@ -35,10 +35,15 @@ filetype indent on
 filetype on
 syntax on
 set nowrap
+" Ensures we see when we are in insert mode
+set showmode
+" Sets a tab to be four spaces
 set tabstop=2
 set shiftwidth=2
+" Converts tabs to spaces, which is useful when the file moves to other systems
 set expandtab
 set smartindent
+" allows us to return to the last indent level rather than the start of a new line on each line break
 set autoindent
 
 " get Vim to highlight found word

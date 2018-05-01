@@ -4,9 +4,8 @@
 [submodule "bundle/vim-scala"]
 	path = bundle/vim-scala
 	url = https://github.com/derekwyatt/vim-scala.git
-
 [submodule "vim-go"]
-	path = vim-go
+	path = bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
 [submodule "bundle/vim-jsx"]
 	path = bundle/vim-jsx
@@ -16,7 +15,7 @@
 	url = https://github.com/pangloss/vim-javascript.git
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
+  url = https://github.com/majutsushi/tagbar.git
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
