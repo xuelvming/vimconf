@@ -12,7 +12,8 @@ execute pathogen#infect()
 
 
 " colorscheme Tomorrow-Night-Bright
-colorscheme Tomorrow-Night
+" colorscheme Tomorrow-Night
+colorscheme zellner
 
 " Add a colored column at 100 to avoid going to far to the right:
 set colorcolumn=100
