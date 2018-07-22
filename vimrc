@@ -21,6 +21,9 @@ set colorcolumn=100
 " add line numbering
 set nonumber
 
+" highlight current line
+set cursorline
+
 " Leader Key, default is backslash, set to space 
 let mapleader=" "
 
