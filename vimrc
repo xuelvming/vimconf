@@ -24,6 +24,9 @@ set nonumber
 " highlight current line
 set cursorline
 
+" enable backspace everything
+set backspace=indent,eol,start " backspace over everything in insert mode
+
 " Leader Key, default is backslash, set to space 
 let mapleader=" "
 
