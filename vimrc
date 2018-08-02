@@ -19,7 +19,7 @@ colorscheme zellner
 set colorcolumn=100
 
 " add line numbering
-set nonumber
+set number
 
 " Leader Key, default is backslash, set to space 
 let mapleader=" "
