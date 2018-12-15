@@ -25,3 +25,6 @@
 [submodule "/Users/hunter/.vim/bundle/sensible"]
 	path = bundle/sensible
 	url = https://tpope.io/vim/sensible.git
+[submodule "bundle/gruvbox"]
+	path = bundle/gruvbox
+	url = https://github.com/morhetz/gruvbox.git

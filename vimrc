@@ -12,9 +12,11 @@ execute pathogen#infect()
 filetype plugin indent on
 
 
-" colorscheme Tomorrow-Night-Bright
-" colorscheme Tomorrow-Night
-colorscheme zellner
+colorscheme gruvbox
+
+" how to add a plugin
+" " cd ~/.vim
+" " git submodule add https://github.com/scrooloose/nerdtree.git  bundle/nerdtree
 
 " Add a colored column at 100 to avoid going to far to the right:
 set colorcolumn=100
