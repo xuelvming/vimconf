@@ -129,3 +129,9 @@ let g:vim_markdown_toc_autofit = 1
 
 " end vim-markdown
 "
+"
+"
+"begin vim-vue
+"very time a Vue file is opened, :syntax sync fromstart
+autocmd FileType vue syntax sync fromstart
+"end vim-vue
