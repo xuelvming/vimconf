@@ -12,11 +12,11 @@ execute pathogen#infect()
 filetype plugin indent on
 
 
-colorscheme gruvbox
+colorscheme default
 
 " how to add a plugin
 " " cd ~/.vim
-" " git submodule add https://github.com/scrooloose/nerdtree.git  bundle/nerdtree
+" " git submodule add https://github.com/scrooloose/nerdtree.git  ~/.vim/bundle/nerdtree
 
 " Add a colored column at 100 to avoid going to far to the right:
 set colorcolumn=100
