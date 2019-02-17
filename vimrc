@@ -11,8 +11,11 @@
 execute pathogen#infect()
 filetype plugin indent on
 
-
+"dark themes
 colorscheme Monokai
+"
+"light themes
+"colorscheme mac_classic
 
 " how to add a plugin
 " " cd ~/.vim
@@ -183,3 +186,39 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = ['.git', 'target','build','.idea','logs','log','cd %s && git ls-files -co --exclude-standard']
 
 "end vim-ctrlp
+"
+"begin fugitive
+"https://github.com/tpope/vim-fugitive
+"
+"View any blob, tree, commit, or tag in the repository with :Gedit (and
+":Gsplit, :Gvsplit, :Gtabedit, ...). Edit a file in the index and write to it
+"to stage the changes. Use :Gdiff to bring up the staged version of the file
+"side by side with the working tree version and use Vim's diff handling
+"capabilities to stage a subset of the file's changes.
+"
+"Bring up an enhanced version of git status with :Gstatus. Press - to
+"add/reset a file's changes, or = to expand an inline diff and operate on
+"individual hunks. Use :Gcommit % to commit the current file, editing the
+"commit message inside the currently running Vim.
+"
+":Gblame brings up an interactive vertical split with git blame output. Press
+"enter on a line to edit the commit where the line changed, or o to open it in
+"a split. When you're done, use :Gedit in the historic buffer to go back to
+"the work tree version.
+"
+":Gmove does a git mv on a file and simultaneously renames the buffer.
+":Gdelete does a git rm on a file and simultaneously deletes the buffer.
+"
+"Use :Ggrep to search the work tree (or any arbitrary commit) with git grep,
+"skipping over that which is not tracked in the repository. :Glog loads all
+"previous revisions of a file into the quickfix list so you can iterate over
+"them and watch the file evolve!
+"
+":Gread is a variant of git checkout -- filename that operates on the buffer
+"rather than the filename. This means you can use u to undo it and you never
+"get any warnings about the file changing outside Vim. :Gwrite writes to both
+"the work tree and index versions of a file, making it like git add when
+"called from a work tree file and like git checkout when called from the index
+"or a blob in history.
+"
+"end fugitive
