@@ -4,7 +4,7 @@
 " load the pathogen plugin automatically
 
 " how to add a plugin
-" git submodule add https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+" git submodule add https://github.com/scrooloose/nerdtree.git bundle/nerdtree
 " git submodule init or git submodule update
 
 
@@ -16,7 +16,7 @@ colorscheme default
 
 " how to add a plugin
 " " cd ~/.vim
-" " git submodule add https://github.com/scrooloose/nerdtree.git  ~/.vim/bundle/nerdtree
+" " git submodule add https://github.com/scrooloose/nerdtree.git bundle/nerdtree
 
 " Add a colored column at 100 to avoid going to far to the right:
 set colorcolumn=100
@@ -138,3 +138,37 @@ let g:vim_markdown_toc_autofit = 1
 "very time a Vue file is opened, :syntax sync fromstart
 autocmd FileType vue syntax sync fromstart
 "end vim-vue
+"
+"begin vim-ctrlp
+"https://github.com/ctrlpvim/ctrlp.vim
+"
+"
+"Run :CtrlP or :CtrlP [starting-directory] to invoke CtrlP in find file mode.
+"Run :CtrlPBuffer or :CtrlPMRU to invoke CtrlP in find buffer or find MRU file mode.
+"Run :CtrlPMixed to search in Files, Buffers and MRU files at the same time.
+"Check :help ctrlp-commands and :help ctrlp-extensions for other commands.
+"
+"Once CtrlP is open:
+"Press <F5> to purge the cache for the current directory to get new files, remove deleted files and apply new ignore options.
+"Press <c-f> and <c-b> to cycle between modes.
+"Press <c-d> to switch to filename only search instead of full path.
+"Press <c-r> to switch to regexp mode.
+"Use <c-j>, <c-k> or the arrow keys to navigate the result list.
+"Use <c-t> or <c-v>, <c-x> to open the selected entry in a new tab or in a new split.
+"Use <c-n>, <c-p> to select the next/previous string in the prompt's history.
+"Use <c-y> to create a new file and its parent directories.
+"Use <c-z> to mark/unmark multiple files and <c-o> to open them.
+"
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+
+"'c' - the directory of the current file.
+"'a' - the directory of the current file, unless it is a subdirectory of the cwd
+"'r' - the nearest ancestor of the current file that contains one of these directories or files: .git .hg .svn .bzr _darcs
+"'w' - modifier to "r": start search from the cwd instead of the current file's directory
+"0 or '' (empty string) - disable this feature.
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_user_command = ['.git', 'target','build','.idea','logs','log','cd %s && git ls-files -co --exclude-standard']
+
+"end vim-ctrlp
