@@ -12,7 +12,7 @@ execute pathogen#infect()
 filetype plugin indent on
 
 
-colorscheme default
+colorscheme Monokai
 
 " how to add a plugin
 " " cd ~/.vim
@@ -138,6 +138,17 @@ let g:vim_markdown_toc_autofit = 1
 "very time a Vue file is opened, :syntax sync fromstart
 autocmd FileType vue syntax sync fromstart
 "end vim-vue
+"
+"
+"begin airline and themes
+"https://github.com/vim-airline/vim-airline-themes
+"
+" change airline theme in vim, 
+" AirlineTheme bubblegum
+"
+let g:airline_theme='bubblegum'
+
+"end irline
 "
 "begin vim-ctrlp
 "https://github.com/ctrlpvim/ctrlp.vim
