@@ -22,3 +22,12 @@
 [submodule "bundle/vim-searchindex"]
 	path = bundle/vim-searchindex
 	url = https://github.com/google/vim-searchindex.git
+[submodule "/Users/hunter/.vim/bundle/sensible"]
+	path = bundle/sensible
+	url = https://tpope.io/vim/sensible.git
+[submodule "bundle/gruvbox"]
+	path = bundle/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
+[submodule "bundle/vim-vue"]
+	path = bundle/vim-vue
+	url = https://github.com/posva/vim-vue.git

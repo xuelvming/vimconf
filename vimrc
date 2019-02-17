@@ -9,11 +9,14 @@
 
 
 execute pathogen#infect()
+filetype plugin indent on
 
 
-" colorscheme Tomorrow-Night-Bright
-" colorscheme Tomorrow-Night
-colorscheme zellner
+colorscheme gruvbox
+
+" how to add a plugin
+" " cd ~/.vim
+" " git submodule add https://github.com/scrooloose/nerdtree.git  bundle/nerdtree
 
 " Add a colored column at 100 to avoid going to far to the right:
 set colorcolumn=100
@@ -125,3 +128,10 @@ let g:vim_markdown_no_default_key_mappings = 1
 let g:vim_markdown_toc_autofit = 1
 
 " end vim-markdown
+"
+"
+"
+"begin vim-vue
+"very time a Vue file is opened, :syntax sync fromstart
+autocmd FileType vue syntax sync fromstart
+"end vim-vue
