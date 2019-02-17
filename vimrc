@@ -84,8 +84,11 @@ nmap <leader>j :NERDTreeFind<CR>
 " autocmd VimEnter * NERDTree
 " autocmd VimEnter * wincmd p
 
+let g:NERDTreeDirArrowExpandable = '>'
+let g:NERDTreeDirArrowCollapsible = 'v'
+
 " Do not display some useless files in the tree:
-let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp','\.git']
+let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp','\.git','`\.idea','\.vscode','\.project']
 
 " quit the nerdtree if it's the last buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
