@@ -7,15 +7,17 @@
 " git submodule add https://github.com/scrooloose/nerdtree.git bundle/nerdtree
 " git submodule init or git submodule update
 
-
 execute pathogen#infect()
 filetype plugin indent on
 
 "dark themes
+"colorscheme Monokai
 colorscheme Monokai
-"
+
+
 "light themes
 "colorscheme mac_classic
+"colorscheme sand
 
 " how to add a plugin
 " " cd ~/.vim
@@ -24,8 +26,8 @@ colorscheme Monokai
 " Add a colored column at 100 to avoid going to far to the right:
 set colorcolumn=100
 
-" add line numbering
-set number
+" set gui font for macvim
+set guifont=Menlo:h20
 
 " highlight current line
 set cursorline
@@ -39,6 +41,11 @@ let mapleader=" "
 
 " Reload Vim Config Without Having To Restart Editor
 map <leader>s :source ~/.vimrc<CR>
+
+" try to default clipboard for vim, need to enable +clipboard for vim
+" tested not working for mac
+" set clipboard=unnamed
+
 
 " some default conf from the site
 set hidden
@@ -61,6 +68,11 @@ set autoindent
 
 " get Vim to highlight found word
 set hlsearch
+
+" show invisble chars ,whitespace is not working
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set list
+
 
 " Ability to cancel a search with Escape
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
@@ -222,3 +234,9 @@ let g:ctrlp_user_command = ['.git', 'target','build','.idea','logs','log','cd %s
 "or a blob in history.
 "
 "end fugitive
+"
+"
+
+" add line numbering
+" set norelativenumber
+set nu 
