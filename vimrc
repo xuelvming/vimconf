@@ -12,12 +12,15 @@ filetype plugin indent on
 
 "dark themes
 "colorscheme Monokai
-colorscheme Monokai
+"colorscheme Sunburst
 
 
 "light themes
 "colorscheme mac_classic
-"colorscheme sand
+"colorscheme github
+colorscheme summerfruit256
+" colorscheme sand
+
 
 " how to add a plugin
 " " cd ~/.vim
@@ -68,14 +71,20 @@ set autoindent
 
 " get Vim to highlight found word
 set hlsearch
+" get vim to stop at the last find, no wrap
+set nowrapscan
 
 " show invisble chars ,whitespace is not working
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-set list
+" set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+" set list
 
 
 " Ability to cancel a search with Escape
-nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+" bug:  this key setup will bring vim into replace mod when started....
+" nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+" instead of the buggy key, i use this shortcut, it's working fine now. leader
+" is set as whitespace above
+nnoremap <silent> <leader>/ :nohlsearch <cr>
 
 
 " Show Matching Parenthesis
@@ -238,5 +247,5 @@ let g:ctrlp_user_command = ['.git', 'target','build','.idea','logs','log','cd %s
 "
 
 " add line numbering
+" set nu
 " set norelativenumber
-set nu 
