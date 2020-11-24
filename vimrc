@@ -11,15 +11,20 @@ execute pathogen#infect()
 filetype plugin indent on
 
 "dark themes
-"colorscheme Monokai
+colorscheme Monokai
 "colorscheme Sunburst
+"colorscheme Benokai
 
+" colorscheme basic-dark
 
 "light themes
 "colorscheme mac_classic
-"colorscheme github
-colorscheme summerfruit256
+" colorscheme github
+" colorscheme lightning 
+"colorscheme summerfruit256
 " colorscheme sand
+
+set rtp+=/usr/local/opt/fzf
 
 
 " how to add a plugin
@@ -43,7 +48,7 @@ let mapleader=" "
 
 
 " Reload Vim Config Without Having To Restart Editor
-map <leader>s :source ~/.vimrc<CR>
+" map <leader>s :source ~/.vimrc<CR>
 
 " try to default clipboard for vim, need to enable +clipboard for vim
 " tested not working for mac
@@ -247,5 +252,4 @@ let g:ctrlp_user_command = ['.git', 'target','build','.idea','logs','log','cd %s
 "
 
 " add line numbering
-" set nu
-" set norelativenumber
+set number
