@@ -3,12 +3,15 @@
 " curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 " load the pathogen plugin automatically
 
-" how to add a plugin
-" git submodule add https://github.com/scrooloose/nerdtree.git bundle/nerdtree
-" git submodule init or git submodule update
+" how to add a plugin, cd ~/.vim/autoload && git clone xxxxxxxxxx.git
+" how to upupgrade a plugin,  cd ~/.vim/autoload/pluginA && git pull
 
 execute pathogen#infect()
+syntax on
 filetype plugin indent on
+
+" fzf integration
+set rtp+=/usr/local/opt/fzf
 
 "dark themes
 colorscheme Monokai
@@ -24,12 +27,6 @@ colorscheme Monokai
 "colorscheme summerfruit256
 " colorscheme sand
 
-set rtp+=/usr/local/opt/fzf
-
-
-" how to add a plugin
-" " cd ~/.vim
-" " git submodule add https://github.com/scrooloose/nerdtree.git bundle/nerdtree
 
 " Add a colored column at 100 to avoid going to far to the right:
 set colorcolumn=100
@@ -46,7 +43,6 @@ set backspace=indent,eol,start " backspace over everything in insert mode
 " Leader Key, default is backslash, set to space 
 let mapleader=" "
 
-
 " Reload Vim Config Without Having To Restart Editor
 " map <leader>s :source ~/.vimrc<CR>
 
@@ -54,14 +50,11 @@ let mapleader=" "
 " tested not working for mac
 " set clipboard=unnamed
 
-
-" some default conf from the site
 set hidden
 set history=100
 
 filetype indent on
 filetype on
-syntax on
 set nowrap
 " Ensures we see when we are in insert mode
 set showmode
@@ -78,6 +71,7 @@ set autoindent
 set hlsearch
 " get vim to stop at the last find, no wrap
 set nowrapscan
+set number
 
 " show invisble chars ,whitespace is not working
 " set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
@@ -137,17 +131,7 @@ nmap <leader>t :TagbarToggle<CR>
 " autocmd VimEnter * wincmd h
 " end the tagbar
 
-" begin vim-jsx
-" By default, JSX syntax highlighting and indenting will be enabled 
-" only for files with the .jsx extension. 
-" If you would like JSX in .js files, add
-let g:jsx_ext_required = 0
-
-" end vim-jsx
-"
-"
 " begin vim-markdown
-
 "  Disable Folding
 let g:vim_markdown_folding_disabled = 1
 
@@ -162,12 +146,7 @@ let g:vim_markdown_toc_autofit = 1
 " end vim-markdown
 "
 "
-"
-"begin vim-vue
-"very time a Vue file is opened, :syntax sync fromstart
-autocmd FileType vue syntax sync fromstart
-"end vim-vue
-"
+
 "
 "begin airline and themes
 "https://github.com/vim-airline/vim-airline-themes
@@ -213,43 +192,3 @@ let g:ctrlp_user_command = ['.git', 'target','build','.idea','logs','log','cd %s
 
 "end vim-ctrlp
 "
-"begin fugitive
-"https://github.com/tpope/vim-fugitive
-"
-"View any blob, tree, commit, or tag in the repository with :Gedit (and
-":Gsplit, :Gvsplit, :Gtabedit, ...). Edit a file in the index and write to it
-"to stage the changes. Use :Gdiff to bring up the staged version of the file
-"side by side with the working tree version and use Vim's diff handling
-"capabilities to stage a subset of the file's changes.
-"
-"Bring up an enhanced version of git status with :Gstatus. Press - to
-"add/reset a file's changes, or = to expand an inline diff and operate on
-"individual hunks. Use :Gcommit % to commit the current file, editing the
-"commit message inside the currently running Vim.
-"
-":Gblame brings up an interactive vertical split with git blame output. Press
-"enter on a line to edit the commit where the line changed, or o to open it in
-"a split. When you're done, use :Gedit in the historic buffer to go back to
-"the work tree version.
-"
-":Gmove does a git mv on a file and simultaneously renames the buffer.
-":Gdelete does a git rm on a file and simultaneously deletes the buffer.
-"
-"Use :Ggrep to search the work tree (or any arbitrary commit) with git grep,
-"skipping over that which is not tracked in the repository. :Glog loads all
-"previous revisions of a file into the quickfix list so you can iterate over
-"them and watch the file evolve!
-"
-":Gread is a variant of git checkout -- filename that operates on the buffer
-"rather than the filename. This means you can use u to undo it and you never
-"get any warnings about the file changing outside Vim. :Gwrite writes to both
-"the work tree and index versions of a file, making it like git add when
-"called from a work tree file and like git checkout when called from the index
-"or a blob in history.
-"
-"end fugitive
-"
-"
-
-" add line numbering
-set number
