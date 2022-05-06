@@ -15,17 +15,37 @@ set rtp+=/usr/local/opt/fzf
 
 "dark themes
 colorscheme Monokai
-"colorscheme Sunburst
-"colorscheme Benokai
+" colorscheme Sunburst
+" colorscheme Benokai
+" colorscheme codeschool
 
 " colorscheme basic-dark
 
-"light themes
-"colorscheme mac_classic
+" light themes
+" colorscheme mac_classic
+" colorscheme simplewhite
+" colorscheme simple256
 " colorscheme github
-" colorscheme lightning 
-"colorscheme summerfruit256
+" colorscheme lightning
+" colorscheme cake
 " colorscheme sand
+" colorscheme habiLight
+" colorscheme LightDefaultGrey
+" colorscheme seagull
+" colorscheme osx_like
+
+" if has("gui_running")
+"     colorscheme habiLight
+"     colorscheme ghostburster
+"     " colorscheme tatami
+"     " colorscheme Atelier_ForestDark
+" else
+"     " colorscheme sand
+"     " colorscheme tatami
+"     " colorscheme Atelier_ForestDark
+"     " colorscheme habiLight
+"     colorscheme ghostburster
+" endif
 
 
 " Add a colored column at 100 to avoid going to far to the right:
@@ -55,12 +75,12 @@ set history=100
 
 filetype indent on
 filetype on
-set nowrap
+set wrap
 " Ensures we see when we are in insert mode
 set showmode
 " Sets a tab to be four spaces
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 " Converts tabs to spaces, which is useful when the file moves to other systems
 set expandtab
 set smartindent
@@ -73,18 +93,16 @@ set hlsearch
 set nowrapscan
 set number
 
-" show invisble chars ,whitespace is not working
+" show invisble chars ,whitespace is not visable itself 
 " set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-" set list
+" set listchars=tab:>-,trail:~,extends:>,precedes:<
+set listchars=tab:>-
+set list
 
 
 " Ability to cancel a search with Escape
 " bug:  this key setup will bring vim into replace mod when started....
 " nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
-" instead of the buggy key, i use this shortcut, it's working fine now. leader
-" is set as whitespace above
-nnoremap <silent> <leader>/ :nohlsearch <cr>
-
 
 " Show Matching Parenthesis
 set showmatch
@@ -110,8 +128,11 @@ nmap <leader>j :NERDTreeFind<CR>
 let g:NERDTreeDirArrowExpandable = '>'
 let g:NERDTreeDirArrowCollapsible = 'v'
 
+" auto close nerdtree when open new file
+let NERDTreeQuitOnOpen=1
+
 " Do not display some useless files in the tree:
-let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp','\.git','`\.idea','\.vscode','\.project']
+let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp','\.git','`\.idea','\.vscode','\.project', '^gradle$', '^target$', '^build$','^.gradle$']
 
 " quit the nerdtree if it's the last buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -119,9 +140,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " end the conf of nerdtree
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-
 
 " begin the tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -191,4 +209,3 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = ['.git', 'target','build','.idea','logs','log','cd %s && git ls-files -co --exclude-standard']
 
 "end vim-ctrlp
-"
