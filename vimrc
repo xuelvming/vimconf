@@ -13,8 +13,10 @@ filetype plugin indent on
 " fzf integration
 set rtp+=/usr/local/opt/fzf
 
+" color schemes
+" git clone https://github.com/flazz/vim-colorschemes.git ~/.vim/bundle/colorschemes
 "dark themes
-colorscheme Monokai
+" colorscheme Monokai
 " colorscheme Sunburst
 " colorscheme Benokai
 " colorscheme codeschool
@@ -32,7 +34,7 @@ colorscheme Monokai
 " colorscheme habiLight
 " colorscheme LightDefaultGrey
 " colorscheme seagull
-" colorscheme osx_like
+colorscheme osx_like
 
 " if has("gui_running")
 "     colorscheme habiLight
@@ -91,7 +93,7 @@ set autoindent
 set hlsearch
 " get vim to stop at the last find, no wrap
 set nowrapscan
-set number
+set nonumber
 
 " show invisble chars ,whitespace is not visable itself 
 " set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
@@ -109,6 +111,7 @@ set showmatch
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " begin the conf for the nerdtree
+" git clone https://github.com/preservim/nerdtree.git ~/.vim/bundle/nerdtree
 " Display hidden files:
 let NERDTreeShowHidden=1
 
@@ -137,6 +140,22 @@ let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp','\.git','`\.idea','\.vscode','\
 " quit the nerdtree if it's the last buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Start NERDTree and put the cursor back in the other window. 
+" autocmd VimEnter * NERDTree | wincmd p
+
+" Start NERDTree when Vim is started without file arguments. 
+autocmd StdinReadPre * let s:std_in=1 
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+
+" Open the existing NERDTree on each new tab. 
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
+let g:NERDTreeWinSize = 30
+
 " end the conf of nerdtree
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -150,6 +169,7 @@ nmap <leader>t :TagbarToggle<CR>
 " end the tagbar
 
 " begin vim-markdown
+" git clone https://github.com/preservim/vim-markdown.git ~/.vim/bundle/vim-markdown
 "  Disable Folding
 let g:vim_markdown_folding_disabled = 1
 
@@ -167,7 +187,7 @@ let g:vim_markdown_toc_autofit = 1
 
 "
 "begin airline and themes
-"https://github.com/vim-airline/vim-airline-themes
+" git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
 "
 " change airline theme in vim, 
 " AirlineTheme bubblegum
@@ -176,8 +196,9 @@ let g:airline_theme='bubblegum'
 
 "end irline
 "
+
 "begin vim-ctrlp
-"https://github.com/ctrlpvim/ctrlp.vim
+" git clone https://github.com/ctrlpvim/ctrlp.vim ~/.vim/bundle/ctrlp
 "
 "
 "Run :CtrlP or :CtrlP [starting-directory] to invoke CtrlP in find file mode.
